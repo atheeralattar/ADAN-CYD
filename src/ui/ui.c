@@ -12,7 +12,16 @@
 // SCREEN: ui_Screen1
 void ui_Screen1_screen_init(void);
 lv_obj_t *ui_Screen1;
+void ui_event_Button1( lv_event_t * e);
 lv_obj_t *ui_Button1;
+lv_obj_t *ui_Roller1;
+lv_obj_t *ui_Switch1;
+// CUSTOM VARIABLES
+
+
+// SCREEN: ui_Screen2
+void ui_Screen2_screen_init(void);
+lv_obj_t *ui_Screen2;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -32,6 +41,13 @@ const lv_img_dsc_t *ui_imgset_360117780[1] = {&ui_img_948390402};
 ///////////////////// ANIMATIONS ////////////////////
 
 ///////////////////// FUNCTIONS ////////////////////
+void ui_event_Button1( lv_event_t * e) {
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+if ( event_code == LV_EVENT_CLICKED) {
+      _ui_screen_change( &ui_Screen2, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Screen2_screen_init);
+}
+}
 
 ///////////////////// SCREENS ////////////////////
 
@@ -41,6 +57,7 @@ lv_disp_t *dispp = lv_disp_get_default();
 lv_theme_t *theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), false, LV_FONT_DEFAULT);
 lv_disp_set_theme(dispp, theme);
 ui_Screen1_screen_init();
+ui_Screen2_screen_init();
 ui____initial_actions0 = lv_obj_create(NULL);
 lv_disp_load_scr( ui_Screen1);
 }

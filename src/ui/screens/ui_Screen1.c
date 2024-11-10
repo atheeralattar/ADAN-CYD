@@ -17,5 +17,22 @@ lv_obj_set_x( ui_Button1, -116 );
 lv_obj_set_y( ui_Button1, -8 );
 lv_obj_set_align( ui_Button1, LV_ALIGN_CENTER );
 
+ui_Roller1 = lv_roller_create(ui_Screen1);
+lv_roller_set_options( ui_Roller1, "Option 1\nOption 2\nOption 3", LV_ROLLER_MODE_NORMAL );
+lv_obj_set_height( ui_Roller1, 100);
+lv_obj_set_width( ui_Roller1, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_x( ui_Roller1, -28 );
+lv_obj_set_y( ui_Roller1, -16 );
+lv_obj_set_align( ui_Roller1, LV_ALIGN_CENTER );
+
+ui_Switch1 = lv_switch_create(ui_Screen1);
+lv_obj_set_width( ui_Switch1, 50);
+lv_obj_set_height( ui_Switch1, 25);
+lv_obj_set_x( ui_Switch1, 53 );
+lv_obj_set_y( ui_Switch1, -38 );
+lv_obj_set_align( ui_Switch1, LV_ALIGN_CENTER );
+
+
+lv_obj_add_event_cb(ui_Button1, ui_event_Button1, LV_EVENT_ALL, NULL);
 
 }
